@@ -1,0 +1,10 @@
+<p>
+  <label><%= l(:docson_path) %></label>
+  <%= text_field_tag 'settings[docson_web_path]', @settings['docson_web_path'], size: 60 %>
+  <em><%= l(:docson_path_hint) %></em>
+</p>
+<p>
+  <label><%= l(:schemas_path) %></label>
+  <%= text_field_tag 'settings[docson_schemas_path]', @settings['docson_schemas_path'], size: 60 %>
+  <em><%= l(:schemas_path_hint) %></em>
+</p>

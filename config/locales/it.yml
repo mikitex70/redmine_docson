@@ -1,0 +1,7 @@
+# Italian strings go here for Rails i18n
+it:
+  docson_path: "URL d'installazione di Docson"
+  schemas_path: 'Percorso base degli schemi JSON'
+  docson_path_hint: "Deve essere un indirizzo accessibile dai browser utente"
+  schemas_path_hint: "Percorso relativo all'URL di Docson per evitare problemi di cross-origin"
+  

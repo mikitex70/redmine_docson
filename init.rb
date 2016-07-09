@@ -4,7 +4,12 @@ Redmine::Plugin.register :redmine_docson do
   description 'Wiki macro plugin for inserting docson widgets in Wiki pages and Issues'
   version '0.0.1'
   url 'https://github.com/mikitex70/redmine_docson'
-  #author_url 'http://example.com/about'
+  author_url 'https://github.com/mikitex70?tab=repositories'
+
+  requires_redmine version: '2.6'..'3.2'
+  
+  settings(partial: 'settings/docson_settings', 
+           default: {'docson_web_path' => '/docson', 'docson_schemas_path' => '/jsonSchemas'})
 
   Redmine::WikiFormatting::Macros.register do
     desc <<EOF
@@ -16,7 +21,7 @@ Redmine::Plugin.register :redmine_docson do
 EOF
 
     macro :docson do |obj, args|
-      content = "<script src=\"/docson/widget.js\" data-schema=\"/jsonSchemas/#{args[0]}\"></script>"
+          content = "<script src=\"#{Setting.plugin_redmine_docson['docson_web_path']}/widget.js\" data-schema=\"#{Setting.plugin_redmine_docson['docson_schemas_path']}/#{args[0]}\"></script>"
 
       return "#{CGI::unescapeHTML(content)}".html_safe
     end
