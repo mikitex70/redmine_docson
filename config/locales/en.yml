@@ -1,3 +1,6 @@
 # English strings go here for Rails i18n
 en:
-  # my_label: "My label"
+  docson_path: 'Docson installation URL'
+  schemas_path: 'JSON schemas base path'
+  docson_path_hint: "Must be accessible by user's browsers"
+  schemas_path_hint: "Path relative to Docson URL to avoid cross-origin issues"
