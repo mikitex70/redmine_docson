@@ -1,6 +1,13 @@
 # Changelog
 
-## version 0.0.1
+## 0.1.0 (2016-07-09)
+
+### New
+
+* Added plugin configuration form. [Michele Tessaro]
+
+
+## 0.0.1 (2016-07-07)
 
 ### New
 
