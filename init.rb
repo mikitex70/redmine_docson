@@ -1,10 +1,10 @@
 Redmine::Plugin.register :redmine_docson do
   name 'Redmine Docson plugin'
   author 'Michele Tessaro'
-  description 'Wiki macro plugin for inserting docson widgets in Wiki pages and Issues'
-  version '0.0.1'
+  description 'Wiki macro plugin for inserting docson widgets into Wiki pages and Issues'
+  version '0.1.0'
   url 'https://github.com/mikitex70/redmine_docson'
-  author_url 'https://github.com/mikitex70?tab=repositories'
+  author_url 'https://github.com/mikitex70'
 
   requires_redmine version: '2.6'..'3.2'
   
@@ -21,9 +21,9 @@ Redmine::Plugin.register :redmine_docson do
 EOF
 
     macro :docson do |obj, args|
-          content = "<script src=\"#{Setting.plugin_redmine_docson['docson_web_path']}/widget.js\" data-schema=\"#{Setting.plugin_redmine_docson['docson_schemas_path']}/#{args[0]}\"></script>"
+      content = "<script src=\"#{Setting.plugin_redmine_docson['docson_web_path']}/widget.js\" data-schema=\"#{Setting.plugin_redmine_docson['docson_schemas_path']}/#{args[0]}\"></script>"
 
-      return "#{CGI::unescapeHTML(content)}".html_safe
+      return CGI::unescapeHTML(content).html_safe
     end
   end
 end
