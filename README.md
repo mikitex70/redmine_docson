@@ -6,7 +6,7 @@ This plugin will allow adding *Docson widgets* into [Redmine](http://www.redmine
 
 ## Requirements
 
-- Requires Redmine v2.6+. Tested with Redmine v3.1.4.
+- Requires Redmine v2.6+. Tested with Redmine v3.1.4 anv 3.2.3.
 
 - A *Docson* installation, in another web server or embedded in Redmine (see below)
 
@@ -15,16 +15,16 @@ This plugin will allow adding *Docson widgets* into [Redmine](http://www.redmine
 - install `redmine_docson` plugin:
 
   ```
-  cd $REDMINE_HOME
+  cd $REDMINE_HOME/plugins
   git clone https://github.com/mikitex70/redmine_docson.git
   ```
 
 - restart Redmine to load the new plugin
 
-- to install docson embedded into Redmine,  download docson into `$REDMINE_HOME/public` directory. For example:
+- to install docson embedded into Redmine, download docson into `$REDMINE_HOME/public` directory. For example:
 
   ```
-  cd $REDMINE_HOME
+  cd $REDMINE_HOME/public
   git clone https://github.com/lbovet/docson.git
   ```
  
@@ -56,6 +56,19 @@ This plugin will allow adding *Docson widgets* into [Redmine](http://www.redmine
 
   As workaround you can extend the `VisitorContext` class overriding the `javaTypeToUrn` method to produce the references in a different fashion.
 
+- Microsoft Windows does not allow to create files containing the ':' character, so you must write a custom `VisitorContext` to construct the schemas URNs. For example:
+
+  ```java
+  import com.fasterxml.jackson.module.jsonSchema.factories.VisitorContext;
+
+  public class VisitorContextSimplifiedUrn extends VisitorContext {
+      @Override
+      public String javaTypeToUrn(JavaType jt) {
+          return "urn.jsonschema."+jt.toCanonical().replace('$', '.');
+      }
+  }
+  ```
+
 ## Known issues
 
 - Docson widgets are not rendered inside a PDF export: widgets are rendered on the HTML page using Javascript and cannot be rendered in PDF. As workaround you can print the web page as PDF document (easy with Linux, a bit more problematic in Windows).
@@ -63,3 +76,5 @@ This plugin will allow adding *Docson widgets* into [Redmine](http://www.redmine
 ## TODO
 
 - Allow specify schemas from attachments.
+- Allow specify schemas into ad macro body.
+- Write tests.
