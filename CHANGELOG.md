@@ -1,13 +1,24 @@
 # Changelog
 
-## 0.1.0 (2016-07-09)
+## v0.1.1 (2016-09-10)
+
+### New
+
+* Tested with Redmine v3.3.0. [Michele Tessaro]
+
+### Fix
+
+* Fixed internal version of plugin. [Michele Tessaro]
+
+
+## v0.1.0 (2016-07-09)
 
 ### New
 
 * Added plugin configuration form. [Michele Tessaro]
 
 
-## 0.0.1 (2016-07-07)
+## v0.0.1 (2016-07-07)
 
 ### New
 

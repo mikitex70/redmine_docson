@@ -6,7 +6,7 @@ Redmine::Plugin.register :redmine_docson do
   url 'https://github.com/mikitex70/redmine_docson'
   author_url 'https://github.com/mikitex70'
 
-  requires_redmine version: '2.6'..'3.2'
+  requires_redmine version: '2.6'..'3.3'
   
   settings(partial: 'settings/docson_settings', 
            default: {'docson_web_path' => '/docson', 'docson_schemas_path' => '/jsonSchemas'})
