@@ -2,11 +2,11 @@ Redmine::Plugin.register :redmine_docson do
   name 'Redmine Docson plugin'
   author 'Michele Tessaro'
   description 'Wiki macro plugin for inserting docson widgets into Wiki pages and Issues'
-  version '0.1.1'
+  version '0.1.2'
   url 'https://github.com/mikitex70/redmine_docson'
   author_url 'https://github.com/mikitex70'
 
-  requires_redmine version: '2.6'..'3.3'
+  requires_redmine version: '2.6'..'3.4'
   
   settings(partial: 'settings/docson_settings', 
            default: {'docson_web_path' => '/docson', 'docson_schemas_path' => '/jsonSchemas'})
