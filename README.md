@@ -6,7 +6,7 @@ This plugin will allow adding *Docson widgets* into [Redmine](http://www.redmine
 
 ## Requirements
 
-- Requires Redmine v2.6+. Tested with Redmine v3.1.4, v3.2.3 and v3.3.0.
+- Requires Redmine v2.6+. Tested with Redmine v3.1.4, v3.2.3, v3.3.0 and v3.4.0.
 
 - A *Docson* installation, in another web server or embedded in Redmine (see below)
 
