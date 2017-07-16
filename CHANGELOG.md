@@ -1,12 +1,21 @@
 # Changelog
 
-## v0.1.1 (2016-09-10)
+## v0.1.2 (2017-07-16)
+
+### Fix
+
+* Fixed compatibility with Redmine 3.4. [Michele Tessaro]
+
+
+## v0.1.1 (2016-09-14)
 
 ### New
 
 * Tested with Redmine v3.3.0. [Michele Tessaro]
 
 ### Fix
+
+* Fixed internal plugin version. [Michele Tessaro]
 
 * Fixed internal version of plugin. [Michele Tessaro]
 
